@@ -1,0 +1,5 @@
+[
+    { "title": "Notice 1", "content": "This is notice 1", "date": "2023-02-20" },
+    { "title": "Notice 2", "content": "This is notice 2", "date": "2023-02-22" },
+    { "title": "Notice 3", "content": "This is notice 3", "date": "2023-02-25" }
+  ]

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Haldibari Secondary School</title>
+    <link rel="stylesheet" href="CSS/admin-dashboard.css"> <!-- Link to external CSS file -->
+    <style>
+        .notice {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .notice h3 {
+            margin-top: 0;
+        }
+        .notice p {
+            margin-bottom: 5px;
+        }
+        .delete-button {
+            color: red;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="about.html">About Us</a>
+        <a href="noticeboard.html">Noticeboard</a>
+    </nav>
+    <div class="container">
+        <h2>Add Notice</h2>
+        <form id="add-notice-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title"><br><br>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content"></textarea><br><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+            <button type="submit">Add Notice</button>
+        </form>
+
+        <h2>Manage Notices</h2>
+        <div id="notice-list"></div> <!-- Notice list will be displayed here -->
+    </div>
+    <footer>
+        <p style="font-size: 20px;">Made with &#9829 by Sakriya Nepal</p>
+    </footer>
+    <script src="Javascript/admin-dashboard.js"></script>
+</body>
+</html>

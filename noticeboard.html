@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticeboard - Haldibari Secondary School</title>
     <link rel="stylesheet" href="CSS/noticeboard.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Add CSS for login/register button */
+        .login-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <button class="login-button" id="login-button">Login/Register</button>
         <h1>Noticeboard</h1>
     </header>
     <nav>
@@ -18,10 +36,56 @@
         <a href="noticeboard.html">Noticeboard</a>
     </nav>
     <div class="container">
-        
+        <h2>Latest Notices</h2>
+        <ul id="notices-list">
+            <!-- Notices will be displayed here -->
+        </ul>
     </div>
     <footer>
         <p style="font-size: 20px;">Made with &#9829 by Sakriya Nepal</p>
     </footer>
+    <script src="Javascript/noticeboard.js">
+        let isAdmin = false;
+
+        const loginButton = document.getElementById('login-button');
+        loginButton.addEventListener('click', () => {
+            window.location.href = 'login.html'; // Redirect to login.html
+        });
+
+        const noticesList = document.getElementById('notices-list');
+        const notices = JSON.parse(localStorage.getItem('notices')) || [];
+
+        notices.forEach((notice) => {
+            const noticeHTML = `
+                <li>
+                    <h3>${notice.title}</h3>
+                    <p>${notice.content}</p>
+                    <p>Posted on: ${notice.date}</p>
+                    ${isAdmin ? '<button class="delete-button">Delete</button>' : ''}
+                </li>
+            `;
+            noticesList.innerHTML += noticeHTML;
+        });
+
+        noticesList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete-button') && isAdmin) {
+                const noticeIndex = Array.prototype.indexOf.call(noticesList.children, e.target.parentNode);
+                notices.splice(noticeIndex, 1);
+                localStorage.setItem('notices', JSON.stringify(notices));
+                noticesList.innerHTML = '';
+                notices.forEach((notice) => {
+                    const noticeHTML = `
+                        <li>
+                            <h3>${notice.title}</h3>
+                            <p>${notice.content}</p>
+                            <p>Posted on: ${notice.date}</p>
+                            ${isAdmin ? '<button class="delete-button">Delete</button>' : ''}
+                        </li>
+                    `;
+                    noticesList.innerHTML += noticeHTML;
+                });
+            }
+        });
+    </script>
 </body>
 </html>
