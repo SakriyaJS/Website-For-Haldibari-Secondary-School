@@ -5,9 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Haldibari Secondary School</title>
     <link rel="stylesheet" href="CSS/gallery.css"> <!-- Link to external CSS file -->
+
+    <style>
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+            background-color: #ffffff; /* White background */
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 40px); /* Three items per row with space */
+            box-sizing: border-box;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 40px); /* Two items per row */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(100% - 40px); /* One item per row */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
+        <a href="login.html" class="login-button">Login/Register</a>
+
+        
         <h1>Gallery</h1>
     </header>
     <nav>
@@ -17,16 +61,29 @@
         <a href="about.html">About Us</a>
         <a href="noticeboard.html">Noticeboard</a>
     </nav>
-    <div class="container">
-        <div class="photo-gallery">
-            <div class="photo"></div>
-            <div class="photo"></div>
-            <!-- Add more photo divs as needed -->
+    <div class="gallery-container">
+        <!-- Image placeholders -->
+        <div class="gallery-item">
+            <img src="Pictures/2024-08-06_20-10.png" alt="Image 1">
         </div>
-       
+        <div class="gallery-item">
+            <img src="Pictures/Hss.png" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="Pictures/HSS1.png" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="Pictures/HSS2.png" alt="Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="Pictures/HSS4.png" alt="Image 5">
+        </div>
+        <div class="gallery-item">
+            <img src="Pictures/HSs5.png" alt="Image 6">
+        </div>
+        <div class="gallery-item">
+            <img src="Pictures/HSS6.png" alt="Image 6">
+        </div>
     </div>
-
-    <footer>
-        <p>Made with &#9829 by Sakriya Nepal</p>
-    </footer>
-
+</body>
+</html>

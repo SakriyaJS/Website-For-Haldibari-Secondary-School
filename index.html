@@ -5,27 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haldibari Secondary School</title>
     <link rel="stylesheet" href="CSS/index.CSS"> <!-- Link to external CSS file -->
+
+    <style>
+        .footer {
+            background-color: #01425a; /* Blue color matching the header */
+            color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-logo .logo {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .footer-text p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-text p:first-child {
+            font-weight: bold;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
-            <a href="login.html" class="login-button">Login/Register</a>\
-            <style>
-                 .login-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-       .login-button:hover {
-            background-color: #3e8e41;
-        }
-            </style>
-        </div>
+        <a href="login.html" class="login-button">Login/Register</a>
+        <style>
+.login-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-button:hover {
+    background-color: #3e8e41;
+}
+        </style>
         <h1>Haldibari Secondary School</h1>
         <p>Established in 2029 BS</p>
     </header>
@@ -42,8 +77,19 @@
             <p>Haldibari Secondary School, Located in Haldibari-2, Jhapa, Nepal, Haldibari Secondary School is a esteemed educational institution dedicated to providing quality education to students from diverse backgrounds. With a strong focus on academic excellence, the school strives to foster a supportive and inclusive learning environment that encourages students to reach their full potential. The school's commitment to excellence is reflected in its rigorous curriculum, which is designed to equip students with the skills, knowledge, and values necessary to succeed in an increasingly complex and interconnected world. The school's experienced and dedicated faculty, state-of-the-art infrastructure, and innovative teaching methods all contribute to a rich and engaging educational experience. By providing a well-rounded education that extends beyond the classroom, Haldibari Secondary School aims to develop responsible, confident, and compassionate individuals who are prepared to make a positive impact in their communities and beyond.</p>
         </div>
     </div>
-    <footer>
-        <p>Made with &#9829 by Sakriya Nepal</p>
+    
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="path/to/school-logo.png" alt="Haldibari Secondary School Logo" class="logo">
+        </div>
+        <div class="footer-text">
+            <p>© <span id="current-year"></span> Haldibari Secondary School. All Rights Reserved.</p>
+            <p>Designed with ❤️ by Haldibari Secondary School Web Team</p>
+        </div>
     </footer>
+
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

@@ -6,26 +6,24 @@
     <title>Noticeboard - Haldibari Secondary School</title>
     <link rel="stylesheet" href="CSS/noticeboard.css"> <!-- Link to external CSS file -->
     <style>
-        /* Add CSS for login/register button */
-        .login-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .notice {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            cursor: pointer; /* Add cursor to indicate the whole box is clickable */
         }
-        .login-button:hover {
-            background-color: #3e8e41;
+        .notice h3 {
+            margin-top: 0;
+        }
+        .notice p {
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <button class="login-button" id="login-button">Login/Register</button>
+    <header><a href="login.html" class="login-button">Login/Register</a>
+        
         <h1>Noticeboard</h1>
     </header>
     <nav>
@@ -36,10 +34,7 @@
         <a href="noticeboard.html">Noticeboard</a>
     </nav>
     <div class="container">
-        <h2>Latest Notices</h2>
-        <ul id="notices-list">
-            <!-- Notices will be displayed here -->
-        </ul>
+        <div id="notice-list"></div> <!-- Notice list will be displayed here -->
     </div>
     <footer>
         <p style="font-size: 20px;">Made with &#9829 by Sakriya Nepal</p>
